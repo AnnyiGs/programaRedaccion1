@@ -1,0 +1,237 @@
+/* Oculta todos los paneles por defecto */
+.panel {
+  display: none;
+}
+
+/* Solo el panel activo es visible */
+.panel.active {
+  display: block;
+}
+
+/* Asegura que el dashboard esté oculto al inicio */
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+
+
+/* ======== ESTILO GENERAL ======== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+/* ======== LOGIN ======== */
+#login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #003366, #00A19D);
+}
+
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-container button {
+  background: #003366;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.info {
+  font-size: 0.8em;
+  color: #555;
+}
+
+/* ======== DASHBOARD ======== */
+#dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* ======== SIDEBAR ======== */
+#sidebar {
+  width: 230px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin: 1rem 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#sidebar li i {
+  margin-right: 10px;
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ======== CONTENIDO ======== */
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #e9ecef; /* Fondo gris claro para contraste */
+}
+
+/* ======== BOTONES ======== */
+.btn {
+  background: #00A19D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+.btn-approve {
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.btn-reject {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+/* ======== BLOQUES (ajuste visual) ======== */
+.card-large, .card-small {
+  background: #ffffff; /* Mantiene fondo blanco dentro del tablero */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+
+/* ======== COLORES POR ROL ======== */
+.redactor-theme { background: #00A19D; }
+.supervisora-theme { background: #FF8C42; }
+.admin-theme { background: #003366; }
+
+
+/* ======== PANEL DEL REDACTOR - ajustes estéticos ======== */
+.panel-header {
+  background-color: #00A19D;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-info p {
+  color: #f9f9f9;
+}
+
+.datetime {
+  color: #f9f9f9;
+}
+
+/* Grid principal del tablero */
+.redactor-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+/* Bloques grandes */
+.card-large {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+/* Bloques pequeños */
+.card-small {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: 150px;
+  overflow-y: auto;
+}
+
+/* Tablas dentro del tablero */
+.table-block {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-block th, .table-block td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-block th {
+  background-color: #00A19D;
+  color: #fff;
+}
+
+#notificaciones ul {
+  padding-left: 20px;
+}
+
+#notificaciones li {
+  margin-bottom: 5px;
+}
+
+/* Botón centrado */
+.new-report-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

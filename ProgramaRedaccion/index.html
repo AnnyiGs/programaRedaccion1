@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red de Noticias - Sistema</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a2d9d6d6e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- LOGIN -->
+  <section id="login-section" class="active">
+    <div class="login-container">
+      <h1>Red de Noticias</h1>
+      <h3>Iniciar sesión</h3>
+      <input type="text" id="username" placeholder="Usuario">
+      <input type="password" id="password" placeholder="Contraseña">
+      <button id="login-btn">Entrar</button>
+      
+      <!--redactor / 1234
+      supervisora / 1234
+      admin / 1234-->
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD GENERAL -->
+  <div id="dashboard" class="hidden">
+    <aside id="sidebar">
+      <h2 id="role-title">Panel</h2>
+      <ul id="menu-list"></ul>
+      <button id="logout-btn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</button>
+    </aside>
+
+    <main id="content">
+      <!-- PANEL REDACTOR -->
+      <section id="panel-redactor" class="panel">
+        <div class="panel-header">
+          <div class="user-info">
+            <h2>Panel del Redactor</h2>
+            <p><strong>Rol:</strong> Redactor</p>
+            <p><strong>Email:</strong> redactor@noticias.com</p>
+          </div>
+          <div class="datetime">
+            <p id="current-datetime"></p>
+          </div>
+        </div>
+
+        <div class="redactor-grid">
+          <!-- Bloque principal: Mis Entregas -->
+          <div class="card-large" id="mis-entregas">
+            <h3><i class="fa-regular fa-file-lines"></i> Mis Entregas</h3>
+            <table class="table-block">
+              <thead>
+                <tr><th>Título</th><th>Fecha</th><th>Estatus</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Cobertura Feria del Libro</td><td>04/10/2025</td><td>Corregir</td></tr>
+                <tr><td>Entrevista Rector</td><td>02/10/2025</td><td>Aprobado</td></tr>
+                <tr><td>Nota de Cultura</td><td>03/10/2025</td><td>Pendiente</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Bloque secundario: Historial -->
+          <div class="card-small" id="historial">
+            <h3><i class="fa-solid fa-clock-rotate-left"></i> Historial</h3>
+            <p>(Sección futura para mostrar historial de reportes o cambios)</p>
+          </div>
+
+          <!-- Bloque principal: Borradores -->
+          <div class="card-large" id="borradores">
+            <h3><i class="fa-solid fa-pen-to-square"></i> Borradores</h3>
+            <table class="table-block">
+              <thead>
+                <tr><th>Título</th><th>Fecha</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Entrevista Local</td><td>01/10/2025</td></tr>
+                <tr><td>Nota de Deportes</td><td>29/09/2025</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Bloque secundario: Notificaciones -->
+          <div class="card-small" id="notificaciones">
+            <h3><i class="fa-solid fa-bell"></i> Notificaciones</h3>
+            <ul>
+              <li>✅ Tu reporte “Entrevista Rector” fue aprobado.</li>
+              <li>✏️ Se solicita corrección en “Cobertura Feria del Libro”.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Botón centrado al final -->
+        <div class="new-report-btn-container">
+          <button class="btn" id="new-report-btn">
+            <i class="fa-solid fa-file-circle-plus"></i> Nueva Entrega
+          </button>
+        </div>
+      </section>
+
+
+      <!-- FORMULARIO ENTREGA -->
+      <section id="formulario-entrega" class="panel">
+        <h2>Formulario de Entrega</h2>
+        <form>
+          <label>Título del Reporte:</label>
+          <input type="text" placeholder="Título del reporte">
+          <label>Descripción:</label>
+          <textarea placeholder="Detalles del reporte..."></textarea>
+          <label>Archivo adjunto:</label>
+          <input type="file">
+          <button type="button" class="btn">Enviar reporte</button>
+        </form>
+      </section>
+
+      <!-- PANEL SUPERVISORA -->
+      <section id="panel-supervisora" class="panel">
+        <h2>Panel de la Supervisora</h2>
+        <p>Aquí puedes revisar y aprobar o rechazar los reportes enviados.</p>
+        <div class="report-list">
+          <div class="report-item">
+            <p><strong>Reporte ejemplo:</strong> Cobertura de evento local</p>
+            <button class="btn-approve">Aprobar</button>
+            <button class="btn-reject">Rechazar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- GESTIÓN DE USUARIOS -->
+      <section id="gestion-usuarios" class="panel">
+        <h2>Gestión de Usuarios</h2>
+        <p>Aquí puedes administrar las cuentas del sistema.</p>
+        <table>
+          <thead>
+            <tr><th>Usuario</th><th>Rol</th><th>Acciones</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>redactor</td><td>Redactor</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
+            <tr><td>supervisora</td><td>Supervisora</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
